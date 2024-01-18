@@ -1,0 +1,30 @@
+
+<html lang="en">
+    <%- include('./partials/header.ejs')  %>
+<body>
+    <style>
+     body{
+        background-color: black;
+        color: white;
+     }
+
+    </style>
+    <%- include('./partials/nav.ejs') %>
+    <div class="home content">
+        <h1>Blog Page</h1>
+        <p>This is Sniper Blog Page</p>
+        
+        <% if (blogPost.length > 0) { %>
+            <% blogPost.forEach(blogPost => { %>
+                <h3><%= blogPost.title %></h3>
+                <p><%= blogPost.content %></p>
+                <p><%= blogPost.author %></p>
+            <% }); %>
+        <% } else { %>
+            <p>No data to display...</p>
+        <% } %>
+        
+    </div>
+    <%- include('./partials/footer.ejs')  %>
+</body>
+</html>
